@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/smashedlife/Dropbox/Rails/becauseirun'
+let g:netrw_dirhist_2='/Users/smashedlife/Dropbox/Rails/becauseirun/public'
+let g:netrw_dirhist_3='/Users/smashedlife/Dropbox/Rails/becauseirun'
+let g:netrw_dirhist_4='/Users/smashedlife/Dropbox/Rails/becauseirun/app'
+let g:netrw_dirhist_5='/Users/smashedlife/Dropbox/Rails/becauseirun/app/assets'
+let g:netrw_dirhist_6='/Users/smashedlife/Dropbox/Rails/becauseirun/app/assets/images'
+let g:netrw_dirhist_7='/Users/smashedlife/Dropbox/Rails/becauseirun/app/assets'
+let g:netrw_dirhist_8='/Users/smashedlife/Dropbox/Rails/becauseirun/app/assets/javascripts'

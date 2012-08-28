@@ -1,0 +1,9 @@
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+
+[user]
+	name = Jonathan So
+  email = jso.life@gmail.com
+
