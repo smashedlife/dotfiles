@@ -6,7 +6,7 @@ export EDITOR='subl -w'
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
-source ~/.git-completion.sh
+source ~/.git_completion.sh
 
 [[ -s "/Users/smashedlife/.rvm/scripts/rvm" ]] && source "/Users/smashedlife/.rvm/scripts/rvm" # Load RVM into a shell session
 
