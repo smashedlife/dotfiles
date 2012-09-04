@@ -58,7 +58,7 @@ set visualbell
 set guioptions-=T
 
 " Default gui color scheme
-color railscasts2
+color molokai 
 
 map <D-r> :execute "!spec %:".eval(line('.'))<cr>
 

@@ -24,15 +24,17 @@ PS1="$GREEN\u@machine$NO_COLOUR:\w$MAGENTA\$(parse_git_branch)$NO_COLOUR\$ "
 
 alias reloadbash='source ~/.bash_profile'
 alias mongostart='mongod run --config /usr/local/etc/mongod.conf'
-alias dev-wc='cd ~/dropbox/wardenclyffe/'
-alias dev-rails='cd ~/dropbox/rails/'
 alias dev-home='cd ~/'
-alias dev-24='cd ~/Dropbox/24Notion/'
+alias dev='cd /Volumes/Sakura/Development'
+alias sakura='cd /Volumes/Sakura'
+
 alias xcbr='xcodebuild -configuration Release -sdk iphonesimulator5.1'
 alias xcbb='xcodebuild -configuration Debug -sdk iphonesimulator5.1'
 alias vhost='cd /Applications/XAMPP/etc/extra'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
+alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 
 alias gst='git status'
 alias gs='git status'
@@ -52,4 +54,3 @@ alias gb='git branch'
 alias gba='git branch -a'
 
 alias vim='mvim -v'
-
