@@ -4,6 +4,8 @@
   branch = auto
 
 [user]
-	name = Jonathan So
+  name = Jonathan So
   email = jso.life@gmail.com
 
+[core]
+  excludesfile = /Users/jso/.gitignore_global
