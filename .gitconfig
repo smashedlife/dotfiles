@@ -8,4 +8,4 @@
   email = jso.life@gmail.com
 
 [core]
-  excludesfile = /Users/jso/.gitignore_global
+	excludesfile = ~/.gitignore_global

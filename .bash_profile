@@ -1,14 +1,13 @@
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH
-export PATH=$PATH:/opt/node/bin
-export PATH=$PATH:~/bin
-export EDITOR='subl -w'
+PATH="~/bin:/usr/local/bin:$PATH"
+PATH=$PATH:"/Volumes/Sakura/android-sdk-macosx/tools:/Volumes/Sakura/android-sdk-macosx/platform-tools"
+export PATH
+export EDITOR='mvim -f'
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
 source ~/.git_completion.sh
 
-[[ -s "/Users/smashedlife/.rvm/scripts/rvm" ]] && source "/Users/smashedlife/.rvm/scripts/rvm" # Load RVM into a shell session
+[[ -s "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm" # Load RVM into a shell session
 
 function parse_git_branch () {
        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -35,6 +34,7 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
+alias pythonwebserver='python -m SimpleHTTPServer
 
 alias gst='git status'
 alias gs='git status'
