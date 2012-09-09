@@ -34,7 +34,7 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
-alias pythonwebserver='python -m SimpleHTTPServer
+alias pythonwebserver='python -m SimpleHTTPServer'
 
 alias gst='git status'
 alias gs='git status'
