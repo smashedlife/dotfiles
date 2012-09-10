@@ -13,13 +13,17 @@ function parse_git_branch () {
        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
-GREEN="\[\033[0;32m\]"
-MAGENTA="\[\033[0;35m\]"
+BLACK="\[\033[30m\]"
+RED="\[\033[31m\]"
+GREEN="\[\033[32m\]"
+BROWN="\[\033[33m\]"
+BLUE="\[\033[34m\]"
+PURPLE="\[\033[35m\]"
+CYAN="\[\033[36m\]"
+GRAY="\[\033[37m\]"
 NO_COLOUR="\[\033[0m\]"
 
-PS1="$GREEN\u@machine$NO_COLOUR:\w$MAGENTA\$(parse_git_branch)$NO_COLOUR\$ "
+PS1='\[\033[1;32m\]\W\[\033[32m\] $(__git_ps1 "(\[\033[35m\]%s\[\033[32m\]) ")\[\033[0;31m\]→\[\033[37m\] '
 
 alias reloadbash='source ~/.bash_profile'
 alias mongostart='mongod run --config /usr/local/etc/mongod.conf'
