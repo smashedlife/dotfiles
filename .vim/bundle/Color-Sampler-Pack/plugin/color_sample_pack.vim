@@ -9,6 +9,7 @@ amenu T&hemes.D&efault.Delek :colo delek<CR>
 amenu T&hemes.D&efault.Desert :colo desert<CR>
 amenu T&hemes.D&efault.ElfLord :colo elflord<CR>
 amenu T&hemes.D&efault.Evening :colo evening<CR>
+amenu T&hemes.D&efault.IRBlack :colo ir_black<CR>
 amenu T&hemes.D&efault.Koehler :colo koehler<CR>
 amenu T&hemes.D&efault.Morning :colo morning<CR>
 amenu T&hemes.D&efault.Murphy :colo murphy<CR>

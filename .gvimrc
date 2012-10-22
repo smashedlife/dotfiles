@@ -58,7 +58,7 @@ set visualbell
 set guioptions-=T
 
 " Default gui color scheme
-color molokai 
+color ir_black
 
 map <D-r> :execute "!spec %:".eval(line('.'))<cr>
 
