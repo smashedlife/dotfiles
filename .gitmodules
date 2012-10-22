@@ -10,3 +10,9 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
+[submodule ".vim/bundle/scss-syntax"]
+	path = .vim/bundle/scss-syntax
+	url = git://github.com/cakebaker/scss-syntax.vim.git
+[submodule ".vim/bundle/sass-syntax"]
+	path = .vim/bundle/sass-syntax
+	url = git://github.com/tpope/vim-haml.git
