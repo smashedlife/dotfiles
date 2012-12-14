@@ -1,5 +1,4 @@
-PATH="~/bin:/usr/local/bin:$PATH"
-PATH=$PATH:"/Volumes/Sakura/android-sdk-macosx/tools:/Volumes/Sakura/android-sdk-macosx/platform-tools"
+PATH="~/bin:/usr/local/bin:/usr/bin:$PATH"
 export PATH
 export EDITOR='mvim -f'
 export CLICOLOR=1
@@ -28,12 +27,9 @@ PS1='\n\[\033[1;31m\]♪ ♫ ♩ ♬ ♭ ♮ ♪ ♫ ♩ ♬ ♭ ♮ ♪ ♫ ♩
 alias reloadbash='source ~/.bash_profile'
 alias mongostart='mongod run --config /usr/local/etc/mongod.conf'
 alias dev-home='cd ~/'
-alias dev='cd /Volumes/Sakura/Development'
-alias sakura='cd /Volumes/Sakura'
 
 alias xcbr='xcodebuild -configuration Release -sdk iphonesimulator5.1'
 alias xcbb='xcodebuild -configuration Debug -sdk iphonesimulator5.1'
-alias vhost='cd /Applications/XAMPP/etc/extra'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
@@ -45,7 +41,6 @@ alias gs='git status'
 alias gl='git log --oneline'
 alias gt='git log --graph --oneline --decorate'
 alias gp='git push'
-alias pitbull='git pull'
 alias gd='git diff | gitx'
 alias gx='gitx --all'
 alias gc='git commit -v'
