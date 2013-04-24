@@ -63,6 +63,6 @@ map <ScrollWheelDown> <C-E>
 
 " Powerline
 set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
-" python from powerline.bindings.vim import source_plugin; source_plugin()
-" source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
 
+" Set Color Scheme
+colors molokai2
