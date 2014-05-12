@@ -1,4 +1,4 @@
-PATH="~/bin:/usr/local/bin:/usr/local/sbin:/Users/jso/Development/android-sdk/platform-tools:/Users/jso/Development/android-sdk/tools:/usr/local/share/python:$PATH"
+PATH="~/bin:/usr/local/bin:/usr/local/sbin:~/Development/android-sdk/platform-tools:~/Development/android-sdk/tools:/usr/local/share/python:$PATH"
 export PATH
 export EDITOR='mvim -f'
 export CLICOLOR=1
