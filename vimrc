@@ -1,14 +1,65 @@
-set nocompatible
-filetype plugin indent on
-set number
-set ruler
-syntax on
-set wildmenu
+" Leader
+let mapleader = " "
+
+"set nocompatible
+"filetype plugin indent on
+"set number
+"set ruler
+"syntax on
+"set wildmenu
 set encoding=utf-8
-set guifont=Meslo\ Regular:h16
-set showmatch
-set clipboard=unnamed
-set t_Co=256
+"set guifont=Meslo\ Regular:h16
+"set showmatch
+"set clipboard=unnamed
+set backspace=2
+set nobackup
+set nowritebackup
+set noswapfile
+set history=50
+set ruler
+set showcmd
+set incsearch
+set laststatus=2
+set autowrite
+set showtabline=2
+" Whitespace stuff
+set wrap
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set softtabstop=2
+set expandtab
+" Display extra whitespace
+set list listchars=tab:»·,trail:·,nbsp:·
+
+" Use one space, not two, after punctuation.
+set nojoinspaces
+
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+
+" Numbers
+set number
+set numberwidth=5
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" Tab completion
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+  set t_Co=256
+endif
+
+filetype plugin indent on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -64,11 +115,12 @@ Plugin 'qpkorr/vim-bufkill'
 Plugin 'dougireton/vim-chef'
 Plugin 'benmills/vimux'
 Plugin 'suan/vim-instant-markdown'
-
-let g:rehash256 = 1
-set showtabline=2
+Plugin 'wesQ3/vim-windowswap'
+Plugin 'easymotion/vim-easymotion'
+"let g:rehash256 = 1
+"set showtabline=2
 " Status bar
-set laststatus=2
+" set laststatus=2
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -96,12 +148,28 @@ let g:airline#extensions#default#layout = [
       \ [ 'x', 'z', 'warning' ]
       \ ]
 
+" All of your Plugins must be added before the following line
+call vundle#end()
+
+augroup vimrcEx
+  autocmd!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it for commit messages, when the position is invalid, or when
+  " inside an event handler (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  " Set syntax highlighting for specific file types
+  autocmd BufRead,BufNewFile Appraisals set filetype=ruby
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+augroup END
 
 nnoremap <F5> :GundoToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-
-" All of your Plugins must be added before the following line
-call vundle#end()
 
 " Syntastic Settings
 set statusline+=%#warningmsg#
@@ -136,29 +204,10 @@ colorscheme molokai
 
 " It should be an editor command
 cmap W<cr> w<cr>
-set showcmd
 
 " unmap F1 help
 nmap <F1> <nop>
 imap <F1> <nop>
-
-" Whitespace stuff
-set wrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set list listchars=tab:\ \ ,trail:·
-
-" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-" Tab completion
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " ctrlp
 let g:ctrlp_map = '<c-p>'
@@ -176,6 +225,63 @@ map <ScrollWheelDown> <C-E>
 noremap ] :bn!<CR>
 noremap [ :bp!<CR>
 
+" Use 0 to go to first character instead of beginning of line
+nnoremap 0 ^
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  if !exists(":Ag")
+    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+    nnoremap \ :Ag<SPACE>
+  endif
+endif
+
+" Tab completion
+" will insert tab at beginning of line,
+" will use completion if not at beginning
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
+
+" Switch between the last two files
+nnoremap <leader><leader> <c-^>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 function! <SID>StripTrailingWhitespaces()
   " Preparation: save last search, and cursor position.
   let _s=@/
@@ -189,3 +295,11 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" Always use vertical diffs
+set diffopt+=vertical
+
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif

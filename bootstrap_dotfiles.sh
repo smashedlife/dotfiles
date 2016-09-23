@@ -1,12 +1,14 @@
-ln -s ~/dotfiles/bash_profile ~/.bash_profile
-ln -s ~/dotfiles/gemrc ~/.gemrc
-ln -s ~/dotfiles/git_completion.sh ~/.git_completion.sh
-ln -s ~/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
-ln -s ~/dotfiles/gvimrc ~/.gvimrc
-ln -s ~/dotfiles/vimrc ~/.vimrc
-ln -s ~/dotfiles/dir_colors ~/.dir_colors
-ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -fs $PWD/bash_profile ~/.bash_profile
+ln -fs $PWD/gemrc ~/.gemrc
+ln -fs $PWD/git_completion.sh ~/.git_completion.sh
+ln -fs $PWD/gitconfig ~/.gitconfig
+ln -fs $PWD/gitignore_global ~/.gitignore_global
+ln -fs $PWD/gvimrc ~/.gvimrc
+ln -fs $PWD/vimrc ~/.vimrc
+ln -fs $PWD/dir_colors ~/.dir_colors
+ln -fs $PWD/tmux.conf ~/.tmux.conf
+ln -fs $PWD/zsh ~/.zsh
+ln -fs $PWD/zshrc ~/.zshrc
 
 mkdir ~/.vimbackups
 

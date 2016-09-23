@@ -29,8 +29,6 @@ NO_COLOUR="\[\033[0m\]"
 PS1='\n\[\033[1;35m\]♪ ♫ ♩ ♬ ♭ ♮ ♪ ♫ ♩ ♬ ♭ ♮ ♪ ♫ ♩ ♬ ♭ ♮ ♪ ♫ ♩ ♬ ♭ ♮ ♪ ♫ ♩ ♬ ♭ ♪ ♫ ♩ ♬ ♭ \n\[\033[1;37m\](\[\033[1;34m\]\w\[\033[1;37m\])\n\[\033[1;32m\]\u@\h\[\033[32m\] $(__git_ps1 "(\[\033[35m\]%s\[\033[32m\]) ")\[\033[0;31m\]→\[\033[37m\] '
 
 alias reloadbash='source ~/.bash_profile'
-alias mongostart='mongod run --config /usr/local/etc/mongod.conf'
-alias dev-home='cd ~/'
 
 alias xcbr='xcodebuild -configuration Release -sdk iphonesimulator5.1'
 alias xcbb='xcodebuild -configuration Debug -sdk iphonesimulator5.1'
