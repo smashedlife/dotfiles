@@ -9,6 +9,7 @@ ln -fs $PWD/dir_colors ~/.dir_colors
 ln -fs $PWD/tmux.conf ~/.tmux.conf
 ln -fs $PWD/zsh ~/.zsh
 ln -fs $PWD/zshrc ~/.zshrc
+ln -fs $PWD/config.fish ~/.config/fish/config.fish
 
 mkdir ~/.vimbackups
 
