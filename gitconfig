@@ -26,6 +26,3 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
-[user]
-	email = jso.life@gmail.com
-	name = Jonathan So
