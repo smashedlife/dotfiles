@@ -10,6 +10,7 @@ alias gst='git status'
 alias gdw='git diff --word-diff'
 alias gl='git log --oneline'
 alias gt='git log --graph --oneline --decorate'
+alias disable_fish_vi_mode='set -U fish_key_bindings fish_default_key_bindings'
 
 alias dev='cd ~/Projects'
 alias weather='curl -4 wttr.in/Portland'
