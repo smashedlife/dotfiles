@@ -36,16 +36,10 @@ MODE_CURSOR_VICMD="green block"
 MODE_CURSOR_VIINS="#20d08a blinking bar"
 MODE_CURSOR_SEARCH="#ff00ff steady underline"
 
-alias ls="ls -GFlash"
-alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
-alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
+if [[ -a .zsh_alias ]]; then
+  source ~/.zsh_alias
+fi
 
-alias gst='git status'
-alias gdw='git diff --word-diff'
-alias gl='git log --oneline'
-alias gt='git log --graph --oneline --decorate'
-
-alias dev='cd ~/Projects'
-alias weather='curl -4 wttr.in/Portland'
-
-
+if [[ -a .zsh_local ]]; then
+  source ~/.zsh_local
+fi
