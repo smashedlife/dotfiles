@@ -6,7 +6,11 @@ SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_12HR=true
 SPACESHIP_BATTERY_SHOW=always
 
-echo 'eval $(dircolors -b $HOME/.dircolors)'
+#echo 'eval $(dircolors -b $HOME/.dircolors)'
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
