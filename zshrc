@@ -40,10 +40,10 @@ MODE_CURSOR_VICMD="green block"
 MODE_CURSOR_VIINS="#20d08a blinking bar"
 MODE_CURSOR_SEARCH="#ff00ff steady underline"
 
-if [[ -a .zsh_alias ]]; then
+if [[ -f .zsh_alias ]]; then
   source ~/.zsh_alias
 fi
 
-if [[ -a .zsh_local ]]; then
+if [[ -f .zsh_local ]]; then
   source ~/.zsh_local
 fi
