@@ -12,6 +12,8 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -47,3 +49,4 @@ fi
 if [[ -f .zsh_local ]]; then
   source ~/.zsh_local
 fi
+export PATH="/usr/local/sbin:$PATH"
