@@ -49,4 +49,5 @@ fi
 if [[ -f .zsh_local ]]; then
   source ~/.zsh_local
 fi
-export PATH="/usr/local/sbin:$PATH"
+
+export PATH="${HOME}/bin:/usr/local/sbin:$PATH"
