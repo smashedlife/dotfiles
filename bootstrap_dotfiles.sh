@@ -10,8 +10,7 @@ ln -fs $PWD/tmux.conf ~/.tmux.conf
 ln -fs $PWD/zsh ~/.zsh
 ln -fs $PWD/zshrc ~/.zshrc
 ln -fs $PWD/zsh_alias ~/.zsh_alias
-ln -fs $PWD/config.fish ~/.config/fish/config.fish
-
+ln -fs $PWD/zprofile ~/.zprofile
 
 mkdir ~/.vimbackups
 
