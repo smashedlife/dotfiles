@@ -9,3 +9,4 @@ alias gt='git log --graph --abbrev-commit --decorate --format=format:"%C(bold bl
 
 alias dev='cd ~/Projects'
 alias weather='curl -4 wttr.in/Portland'
+alias ld='lazydocker'
