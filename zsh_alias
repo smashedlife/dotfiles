@@ -1,4 +1,4 @@
-alias ls="ls -GFlash"
+alias ls="ls -Flsh --color=auto --group-directories-first"
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 
@@ -10,3 +10,4 @@ alias gt='git log --graph --abbrev-commit --decorate --format=format:"%C(bold bl
 alias dev='cd ~/Projects'
 alias weather='curl -4 wttr.in/Portland'
 alias ld='lazydocker'
+
