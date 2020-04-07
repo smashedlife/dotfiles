@@ -1,3 +1,4 @@
+# Load Antibody https://getantibody.github.io
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins
 
