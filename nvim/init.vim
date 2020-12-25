@@ -27,6 +27,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 
@@ -101,12 +102,16 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Toggle
 nnoremap <silent> <C-b> :NERDTreeToggle<CR>
 
+let mapleader = ","
+imap jj <Esc>
+imap kk <Esc>
+
 let g:ale_linters = {
-  'python': ['flake8', 'pylint'],
-  'javascript': ['eslint'],
-  'typescript': ['prettier', 'tslint'],
-  'scss': ['prettier'],
-  'html': ['prettier']
-}
+      \  'python': ['flake8', 'pylint'],
+      \  'javascript': ['eslint'],
+      \  'typescript': ['prettier', 'tslint'],
+      \  'scss': ['prettier'],
+      \  'html': ['prettier']
+      \}
 
 let g:ale_fix_on_save = 1
