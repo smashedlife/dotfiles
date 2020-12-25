@@ -106,6 +106,17 @@ let mapleader = ","
 imap jj <Esc>
 imap kk <Esc>
 
+" Copy to clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg
+nnoremap <leader>y "+y
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 let g:ale_linters = {
       \  'python': ['flake8', 'pylint'],
       \  'javascript': ['eslint'],
