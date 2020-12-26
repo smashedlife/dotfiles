@@ -11,6 +11,7 @@ call plug#begin(stdpath('data') . '/plugged')
   " Plugin Section
   Plug 'arielrossanigo/dir-configs-override.vim'
   Plug 'dracula/vim'
+  Plug 'ghifarit53/tokyonight-vim'
   Plug 'scrooloose/nerdtree'
   Plug 'ryanoasis/vim-devicons'
   Plug 'mhinz/vim-signify'
@@ -22,12 +23,14 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'dense-analysis/ale'
   Plug 'tpope/vim-surround'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'vim-ruby/vim-ruby'
+  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'easymotion/vim-easymotion'
   Plug 'pangloss/vim-javascript'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'wakatime/vim-wakatime'
+  Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
+  Plug 'davidhalter/jedi'
 
 call plug#end()
 
@@ -39,7 +42,11 @@ endif
 let python_highlight_all=1
 
 set encoding=utf-8
-colorscheme dracula
+
+let g:tokyonight_style = 'night' "night, storm
+let g:tokyonight_enable_italic = 1
+let g:lightline = {'colorscheme' : 'tokyonight'}
+colorscheme tokyonight
 
 set backspace=2
 set nobackup
@@ -85,6 +92,20 @@ set smartcase
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
+" Remove trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
@@ -126,3 +147,7 @@ let g:ale_linters = {
       \}
 
 let g:ale_fix_on_save = 1
+
+" Execute save and execute python code
+autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F5> <Esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
