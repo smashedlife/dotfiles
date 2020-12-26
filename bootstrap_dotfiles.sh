@@ -21,3 +21,5 @@ mkdir ~/.vim
 mkdir ~/.vim/autoload
 
 ln -fs ~/.vim ~/.config/nvim
+ln -fs ~/.vim ~/.local/share/nvim/site
+ln -s ~/Projects/personal/dotfiles/nvim/init.vim init.vim
