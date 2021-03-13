@@ -30,7 +30,8 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'junegunn/fzf.vim'
   Plug 'wakatime/vim-wakatime'
   Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
-  Plug 'davidhalter/jedi'
+  Plug 'davidhalter/jedi-vim'
+  Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
@@ -59,6 +60,7 @@ set incsearch
 set laststatus=2
 set autowrite
 set showtabline=2
+set mouse=a
 
 " Whitespace stuff
 set wrap
@@ -80,6 +82,7 @@ set colorcolumn=+1
 
 " Numbers
 set number
+set relativenumber
 set numberwidth=5
 
 " Searching
@@ -137,6 +140,15 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+" Easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
 
 let g:ale_linters = {
       \  'python': ['flake8', 'pylint'],
