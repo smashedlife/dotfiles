@@ -32,6 +32,9 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
   Plug 'davidhalter/jedi-vim'
   Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'mileszs/ack.vim'
+  Plug 'Yggdroot/indentLine'
+  Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 
@@ -163,3 +166,9 @@ let g:ale_fix_on_save = 1
 " Execute save and execute python code
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F5> <Esc>:w<CR>:exec '!python' shellescape(@%, 1)<CR>
+
+" Vim Rainbow Enable
+let g:rainbow_active = 1
+
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
