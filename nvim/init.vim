@@ -19,6 +19,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'preservim/nerdcommenter'
   Plug 'airblade/vim-gitgutter'
   Plug 'itchyny/lightline.vim'
+  Plug 'maximbaz/lightline-ale'
   Plug 'jiangmiao/auto-pairs'
   Plug 'dense-analysis/ale'
   Plug 'tpope/vim-surround'
@@ -154,14 +155,56 @@ set splitbelow
 set splitright
 
 let g:ale_linters = {
-      \  'python': ['flake8', 'pylint'],
-      \  'javascript': ['eslint'],
-      \  'typescript': ['prettier', 'tslint'],
-      \  'scss': ['prettier'],
-      \  'html': ['prettier']
-      \}
+\     'python': ['flake8', 'pylint'],
+\     'javascript': ['eslint'],
+\     'typescript': ['prettier', 'tslint'],
+\     'scss': ['prettier'],
+\     'html': ['prettier']
+\}
+
+let g:ale_fixers = {
+\     '*': ['trim_whitespace'],
+\     'javascript': ['eslint']
+\}
 
 let g:ale_fix_on_save = 1
+
+" Lightline configuration with ALE
+let g:lightline = {}
+
+let g:lightline.component_expand = {
+\     'linter_checking': 'lightline#ale#checking',
+\     'linter_infos': 'lightline#ale#infos',
+\     'linter_warnings': 'lightline#ale#warnings',
+\     'linter_errors': 'lightline#ale#errors',
+\     'linter_ok': 'lightline#ale#ok',
+\}
+
+let g:lightline.component_type = {
+\     'linter_checkiing': 'right',
+\     'linter_infos': 'right',
+\     'linter_warnings': 'warning',
+\     'linter_errors': 'error',
+\     'linter_ok': 'right',
+\}
+
+let g:lightline.active = {
+\     'right': [
+\       [
+\         'linter_checking',
+\         'linter_errors',
+\         'linter_warnings',
+\         'linter_infos',
+\         'linter_ok'
+\       ]
+\     ]
+\}
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_infos = "\uf129"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
 
 " Execute save and execute python code
 autocmd FileType python map <buffer> <F5> :w<CR>:exec '!python' shellescape(@%, 1)<CR>
