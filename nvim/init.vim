@@ -27,6 +27,11 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'easymotion/vim-easymotion'
   Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'MaxMEllon/vim-jsx-pretty'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'styled-components/vim-styled-components'
+  Plug 'jparise/vim-graphql'
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'wakatime/vim-wakatime'
@@ -36,6 +41,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'mileszs/ack.vim'
   Plug 'Yggdroot/indentLine'
   Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'ap/vim-css-color'
 
 call plug#end()
 
@@ -215,3 +221,6 @@ let g:rainbow_active = 1
 
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '·'
+
+" Something weird with vim-jedi and call signatures
+let g:jedi#show_call_signatures = "2"
