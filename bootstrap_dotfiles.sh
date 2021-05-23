@@ -1,3 +1,8 @@
+mkdir ~/.config/nvim
+mkdir ~/.vimbackups
+mkdir ~/.vim/autoload
+
+
 ln -fs $PWD/bash_profile ~/.bash_profile
 ln -fs $PWD/gemrc ~/.gemrc
 ln -fs $PWD/git_completion.sh ~/.git_completion.sh
@@ -14,12 +19,7 @@ ln -fs $PWD/hyper.js ~/.hyper.js
 ln -fs $PWD/zshrc ~/.zshrc
 ln -fs $PWD/zsh_alias ~/.zsh_alias
 ln -fs $PWD/zprofile ~/.zprofile
+ln -fs $PWD/zsh_plugins ~/.zsh_plugins
 
-
-mkdir ~/.vimbackups
-mkdir ~/.vim
-mkdir ~/.vim/autoload
-
-ln -fs ~/.vim ~/.config/nvim
+ln -fs ~/.config/nvim ~/.vim
 ln -fs ~/.vim ~/.local/share/nvim/site
-ln -s ~/Projects/personal/dotfiles/nvim/init.vim init.vim
