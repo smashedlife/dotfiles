@@ -1,5 +1,7 @@
-mkdir ~/.config/nvim
+mkdir ~/.config
+mkdir ~/.config/vim
 mkdir ~/.vimbackups
+ln -fs ~/.config/nvim ~/.vim
 mkdir ~/.vim/autoload
 
 
@@ -21,5 +23,5 @@ ln -fs $PWD/zsh_alias ~/.zsh_alias
 ln -fs $PWD/zprofile ~/.zprofile
 ln -fs $PWD/zsh_plugins ~/.zsh_plugins
 
-ln -fs ~/.config/nvim ~/.vim
+mkdir ~/.local/share/nvim
 ln -fs ~/.vim ~/.local/share/nvim/site
