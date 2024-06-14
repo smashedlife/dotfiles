@@ -1,4 +1,3 @@
-alias ls="ls -Flsh --color=auto --group-directories-first"
 alias showhiddenfiles='defaults write com.apple.finder AppleShowAllFiles TRUE'
 alias hidehiddenfiles='defaults write com.apple.finder AppleShowAllFiles FALSE'
 

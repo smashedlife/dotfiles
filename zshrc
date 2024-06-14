@@ -5,9 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load Antibody https://getantibody.github.io
-source <(antibody init)
-antibody bundle < ~/.zsh_plugins
+
+# Load Antidote https://getantidoteA.github.io
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+
+source <(antidote init)
+antidote bundle < ~/.zsh_plugins
 
 # echo 'eval $(dircolors -b $HOME/.dircolors)'
 
