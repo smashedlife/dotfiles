@@ -1,8 +1,8 @@
 # Theme
-denysdovhan/spaceship-prompt
+romkatv/powerlevel10k
 
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
 softmoth/zsh-vim-mode
-trapd00r/zsh-syntax-highlighting-filetypes
-zsh-users/zsh-syntax-highlighting
+# trapd00r/zsh-syntax-highlighting-filetypes
+# zsh-users/zsh-syntax-highlighting
