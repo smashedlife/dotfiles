@@ -5,9 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-# Load Antidote https://getantidoteA.github.io
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  # Load Antidote
+  source /usr/share/zsh-antidote/antidote.zsh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  # Load Antidote via homebrew
+  source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+fi
 
 source <(antidote init)
 antidote bundle < ~/.zsh_plugins
